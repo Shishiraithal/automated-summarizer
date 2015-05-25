@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    version="2.5">
-
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>MajorProjectServlet</servlet-name>
+        <servlet-class>com.automated.summarizer.MajorProjectServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Mind_map_servlet</servlet-name>
+        <servlet-class>com.automated.summarizer.Mind_map_servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Offline_Summary</servlet-name>
+        <servlet-class>com.automated.summarizer.Offline_Summary</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MajorProjectServlet</servlet-name>
+        <url-pattern>/MajorProjectServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mind_map_servlet</servlet-name>
+        <url-pattern>/Mind_map_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Offline_Summary</servlet-name>
+        <url-pattern>/Offline_Summary</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-    
-  <servlet>
-    <servlet-name>hello</servlet-name>
-    <servlet-class>com.example.HelloServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>hello</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
-
-
 </web-app>

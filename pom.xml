@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <version>1.0-SNAPSHOT</version>
-    <name>helloworld</name>
-    <artifactId>helloworld</artifactId>
-    <packaging>jar</packaging>
+    <name>Automated-Summarizer</name>
+    <artifactId>Automated-Summarize</artifactId>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>1.6</java.version>

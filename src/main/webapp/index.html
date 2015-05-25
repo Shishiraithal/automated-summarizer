@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AEBTSAMMG</title>
+        <style type="text/css">
+            body {
+                font-family: Sans-Serif;
+                color: #333333;
+            }
+
+            #chosen {
+                border-radius: 10px;
+                width: 45px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-image: -webkit-linear-gradient(top, #cccccc, #330000);
+                background-image: -o-linear-gradient(top, #cccccc, #330000);
+                background-image: -moz-linear-gradient(top, #cccccc, #330000);
+                text-align: center;
+                color: #ffffff;
+                font-weight: bold;
+                font-size: large;
+                margin-left: 40px;
+            }
+
+            #slider {
+                margin-left: 10px;
+            }
+
+            /*this is only for webkit, not opera*/
+            input[type='range'] {
+                -webkit-appearance: none;
+                padding-left: 2px;
+                padding-right: 2px;
+                -webkit-border-radius: 5px;
+                background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
+            }
+        </style>
+        <script type="text/javascript">
+            function updateSlider(slideAmount) {
+                //get the element
+                var display = document.getElementById("chosen");
+                //show the amount
+                display.innerHTML = slideAmount;
+                //get the element
+            }
+            function validateForm() {
+                var x = document.forms["myForm"]["txtsearch"].value;
+                if (x == null || x == "")
+                {
+                    alert("Search term must be filled out");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm" form action="MajorProjectServlet" onsubmit="return validateForm()" method="POST">
+            Enter Your Search term Here <input type="text" name="txtsearch"><br>
+            <br>
+            <div id="slider">
+                5% <input id="slide" name="SlidVal" type="range" min="10" max="80" step="5"
+                          value="40" onchange="updateSlider(this.value)" /> 80%
+            </div>
+            <br />
+            <div id="chosen">40</div>
+            <br> <input type="submit" name="btnsubmit">
+        </form>
+        <br>
+        <!--For Offline Summary Click Here <a href="/Offline_Summary.html">Visit Offline Summary</a> 
+        <br>-->
+        For Mind map Click Here <a href="/Create_mindmap.html">Visit Mind Map</a>
+    </body>
+</html>
+
+
