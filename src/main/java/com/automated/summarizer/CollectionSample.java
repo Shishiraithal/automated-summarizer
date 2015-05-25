@@ -2,10 +2,9 @@ package com.automated.summarizer;
 
 import java.io.*;
 import java.util.*;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 import org.tartarus.martin.Stemmer;
 
 
@@ -756,14 +755,6 @@ public class CollectionSample {
        }
        
        
-       
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code applicmation logic here
-          
-    }
 
     private static void load_summaries() {
         for(int i=0;i<Util.file_no;i++)
@@ -796,11 +787,11 @@ public class CollectionSample {
     private static int calculate_similarity(int index, int nextIndex) {
     int percent=0;
     int count1=0,count2=0;
-    ArrayList<String> summary1=new ArrayList<>();
-    ArrayList<String> stop_word_list=new ArrayList<>();
-    ArrayList<String> summary2=new ArrayList<>();
-    ArrayList<String> words1=new ArrayList<>();
-    ArrayList<String> words2=new ArrayList<>();
+    ArrayList<String> summary1=new ArrayList<String>();
+    ArrayList<String> stop_word_list=new ArrayList<String>();
+    ArrayList<String> summary2=new ArrayList<String>();
+    ArrayList<String> words1=new ArrayList<String>();
+    ArrayList<String> words2=new ArrayList<String>();
     summary1.addAll(Arrays.asList(all_files[index].split("\\.?!")));
     summary2.addAll(Arrays.asList(all_files[nextIndex].split("\\.\\?!")));
     for(String sentence1: summary1)
