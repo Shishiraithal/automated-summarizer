@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                <title>Mind Map</title>
+                <script>
+function validateForm() {
+    var x = document.forms["myForm"]["txtsearch"].value;
+                        if (x == null || x == "") {
+                            alert("Search term must be filled out");
+                            return false;
+                        }
+                    }
+                </script>
+    </head>
+    <body>
+           <form name="myForm" form action="Mind_map_servlet" onsubmit="return validateForm()" method="POST">
+        
+            Enter Your Search term Here <input type="text" name="txtsearch"><br>
+            <br>
+            <input type="submit" name="btnsubmit">
+        </form>
+    </body>
+</html>
