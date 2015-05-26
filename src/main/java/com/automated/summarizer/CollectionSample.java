@@ -12,8 +12,8 @@ import org.tartarus.martin.Stemmer;
 public class CollectionSample {
     
        
-       public static ArrayList<String> unordered_sent = new ArrayList();
-       public static ArrayList<String> ordered_sent = new ArrayList();
+       public static ArrayList<String> unordered_sent = new ArrayList<String>();
+       public static ArrayList<String> ordered_sent = new ArrayList<String>();
        
        public static Map<String, Integer> unorderedMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
        public static Map<String, Integer> orderedMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
@@ -179,13 +179,13 @@ public class CollectionSample {
            
            String file_contents = null,final_summary = null;
            int noOfSentencesInSummary = 0;
-           ArrayList<String> sent_list = new ArrayList();
-           ArrayList<String> all_words = new ArrayList();
-           ArrayList<String> stop_word_list = new ArrayList();
-           Map<String, Integer> freqMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
+           ArrayList<String> sent_list = new ArrayList<String>();
+           ArrayList<String> all_words = new ArrayList<String>();
+           ArrayList<String> stop_word_list = new ArrayList<String>();
+           Map<String, Object> freqMap = new TreeMap<String, Object>(String.CASE_INSENSITIVE_ORDER);
            Map<String, Float> sentMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
-           ArrayList<String> list_summary_final = new ArrayList();
-           ArrayList<String> summary_list = new ArrayList();
+           ArrayList<String> list_summary_final = new ArrayList<String>();
+           ArrayList<String> summary_list = new ArrayList<String>();
 
            
            
@@ -235,7 +235,7 @@ public class CollectionSample {
             
             if(freqMap.containsKey(stemmedWord))
             {
-                int cnt =freqMap.get(stemmedWord);
+                int cnt =(int) freqMap.get(stemmedWord);
                 cnt++;
                 freqMap.put(stemmedWord, cnt);
             }
@@ -265,7 +265,7 @@ public class CollectionSample {
                   no_of_words++;
                   sss=stemWord(temp2);
         
-                  int wordfreq=freqMap.get(sss);
+                  int wordfreq=(int) freqMap.get(sss);
                   
                   sent_wt+=wordfreq;
                   
@@ -638,7 +638,7 @@ public class CollectionSample {
         for(String sentence:unordered_sent)
         {
         
-            List<String> sWords = new ArrayList();
+            List<String> sWords = new ArrayList<String>();
             int i=0;
             String []words=splitSentence(sentence);
             for(String str:words)
@@ -681,7 +681,7 @@ public class CollectionSample {
     public static void calculate_uv(List<String> u ,String sentence)
     {
         int count1=0,count2=0;
-        ArrayList<String> tempList=new ArrayList();
+        ArrayList<String> tempList=new ArrayList<String>();
         tempList.clear();
         String []words=splitSentence(sentence);
 
