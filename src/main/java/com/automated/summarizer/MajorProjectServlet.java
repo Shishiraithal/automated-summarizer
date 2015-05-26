@@ -10,17 +10,24 @@ import java.util.List;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.jsoup.Jsoup;
 
-@SuppressWarnings("serial")
+
 public class MajorProjectServlet extends HttpServlet implements Serializable
 {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 URL url1=null,url2=null,url3=null,url4=null,sent_url=null;
 String url_list=null,page=null,page_1=null,page_2=null,page_3=null,page_4=null,output=null,output_1=null,output_2=null,output_3=null,output_4=null;
 String[] split_url=null;
@@ -58,7 +65,7 @@ int i=0;
 			System.out.println("total: "+total);
                         
                         
-                        ArrayList temp = new ArrayList();
+                        ArrayList<String> temp = new ArrayList<String>();
                         
                         //List temp = new ArrayList<String>();
 			
@@ -74,7 +81,7 @@ int i=0;
                         
                           StringBuffer sb = new StringBuffer("");
                           
-                                Iterator itr=temp.iterator();//getting Iterator from arraylist to traverse elements  
+                                Iterator<String> itr=temp.iterator();//getting Iterator from arraylist to traverse elements  
                                  while(itr.hasNext())
                               {  
                                 sb.append((String)(itr.next()));
@@ -235,7 +242,7 @@ out.println("///////////////////////////////////////////////////////////////////
       out.println("<br>");
       out.println("---------------------------------------------------------------------");
       ///*out.println("<br>");
-         out.println(Util.combinedSummary);
+      out.println(Util.combinedSummary);
       //
       out.println("<br>");
     
@@ -247,14 +254,14 @@ out.println("///////////////////////////////////////////////////////////////////
 		split_summary=Temp_Summary.split("\\.");
 		int i = 0;
 		StringBuffer sb = new StringBuffer(""); 
-		ArrayList temp = new ArrayList();
+		ArrayList<String> temp = new ArrayList<String>();
 		for(i = 0; i<=(split_summary.length)-1; i++)
 		{
 			//System.out.println(split_summary[i]);
 			temp.add(split_summary[i]);
 			
 		}
-		Iterator itr=temp.iterator();
+		Iterator<String> itr=temp.iterator();
 		sb.append("<ul>");
 		while(itr.hasNext())
 		{  
