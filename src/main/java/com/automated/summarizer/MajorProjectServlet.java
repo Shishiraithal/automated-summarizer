@@ -301,15 +301,19 @@ out.println("///////////////////////////////////////////////////////////////////
       out.println("<br>");
       */
 
-  	url1=null;url2=null;url3=null;url4=null;sent_url=null;
-  	url_list=null;page=null;page_1=null;page_2=null;page_3=null;page_4=null;
-  	output=null;output_1=null;output_2=null;output_3=null;output_4=null;
-  	split_url=null;
-  	i=0;
+
+  	cleanup();
 }
 
 
-
+    public void cleanup()
+    {
+  	  	url1=null;url2=null;url3=null;url4=null;sent_url=null;
+  	  	url_list=null;page=null;page_1=null;page_2=null;page_3=null;page_4=null;
+  	  	output=null;output_1=null;output_2=null;output_3=null;output_4=null;
+  	  	split_url=null;
+  	  	i=0;
+    }
 
 	static class GoogleResults implements Serializable
 	{
