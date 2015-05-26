@@ -2,15 +2,15 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
         <servlet-name>MajorProjectServlet</servlet-name>
-        <servlet-class>MajorProjectServlet</servlet-class>
+        <servlet-class>com.automated.summarizer.MajorProjectServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Mind_map_servlet</servlet-name>
-        <servlet-class>Mind_map_servlet</servlet-class>
+        <servlet-class>com.automated.summarizer.Mind_map_servlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Offline_Summary</servlet-name>
-        <servlet-class>Offline_Summary</servlet-class>
+        <servlet-class>com.automated.summarizer.Offline_Summary</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MajorProjectServlet</servlet-name>
