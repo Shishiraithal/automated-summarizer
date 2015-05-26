@@ -300,11 +300,12 @@ out.println("///////////////////////////////////////////////////////////////////
        out.println(Util.combinedSummary);
       out.println("<br>");
       */
-      URL url1,url2,url3,url4,sent_url;
-String url_list,page,page_1,page_2,page_3,page_4,output,output_1,output_2,output_3,output_4;
-String[] split_url;
-i=0;
 
+  	url1=null;url2=null;url3=null;url4=null;sent_url=null;
+  	url_list=null;page=null;page_1=null;page_2=null;page_3=null;page_4=null;
+  	output=null;output_1=null;output_2=null;output_3=null;output_4=null;
+  	split_url=null;
+  	i=0;
 }
 
 
