@@ -295,7 +295,7 @@ out.println("///////////////////////////////////////////////////////////////////
 
 
      ///////////////////////
-      Util.combinedSummary=null;
+      //Util.combinedSummary=null;
       /*out.println("Below should be blank");
        out.println(Util.combinedSummary);
       out.println("<br>");
