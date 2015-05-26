@@ -241,9 +241,9 @@ out.println("///////////////////////////////////////////////////////////////////
       out.println("Total time taken for Summarization is"+" "+Util.totalTime+" "+"Milli Seconds");
       out.println("<br>");
       out.println("---------------------------------------------------------------------");
-      ///*out.println("<br>");
-      //out.println(Util.combinedSummary);
-      //
+      out.println("<br>");
+      out.println(Util.combinedSummary);
+      
       out.println("<br>");
     
                 String Nonbulleted=Util.combinedSummary;          
