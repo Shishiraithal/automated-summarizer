@@ -242,7 +242,7 @@ out.println("///////////////////////////////////////////////////////////////////
       out.println("<br>");
       out.println("---------------------------------------------------------------------");
       ///*out.println("<br>");
-      out.println(Util.combinedSummary);
+      //out.println(Util.combinedSummary);
       //
       out.println("<br>");
     
