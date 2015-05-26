@@ -1,10 +1,9 @@
 package com.automated.summarizer;
-
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.JOptionPane;
 import org.tartarus.martin.Stemmer;
 
 
@@ -12,8 +11,8 @@ import org.tartarus.martin.Stemmer;
 public class CollectionSample {
     
        
-       public static ArrayList<String> unordered_sent = new ArrayList<String>();
-       public static ArrayList<String> ordered_sent = new ArrayList<String>();
+       public static ArrayList<String> unordered_sent = new ArrayList();
+       public static ArrayList<String> ordered_sent = new ArrayList();
        
        public static Map<String, Integer> unorderedMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
        public static Map<String, Integer> orderedMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
@@ -179,13 +178,13 @@ public class CollectionSample {
            
            String file_contents = null,final_summary = null;
            int noOfSentencesInSummary = 0;
-           ArrayList<String> sent_list = new ArrayList<String>();
-           ArrayList<String> all_words = new ArrayList<String>();
-           ArrayList<String> stop_word_list = new ArrayList<String>();
-           Map<String, Object> freqMap = new TreeMap<String, Object>(String.CASE_INSENSITIVE_ORDER);
+           ArrayList<String> sent_list = new ArrayList();
+           ArrayList<String> all_words = new ArrayList();
+           ArrayList<String> stop_word_list = new ArrayList();
+           Map<String, Integer> freqMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
            Map<String, Float> sentMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
-           ArrayList<String> list_summary_final = new ArrayList<String>();
-           ArrayList<String> summary_list = new ArrayList<String>();
+           ArrayList<String> list_summary_final = new ArrayList();
+           ArrayList<String> summary_list = new ArrayList();
 
            
            
@@ -235,7 +234,7 @@ public class CollectionSample {
             
             if(freqMap.containsKey(stemmedWord))
             {
-                int cnt =(int) freqMap.get(stemmedWord);
+                int cnt =freqMap.get(stemmedWord);
                 cnt++;
                 freqMap.put(stemmedWord, cnt);
             }
@@ -265,7 +264,7 @@ public class CollectionSample {
                   no_of_words++;
                   sss=stemWord(temp2);
         
-                  int wordfreq=(int) freqMap.get(sss);
+                  int wordfreq=freqMap.get(sss);
                   
                   sent_wt+=wordfreq;
                   
@@ -638,7 +637,7 @@ public class CollectionSample {
         for(String sentence:unordered_sent)
         {
         
-            List<String> sWords = new ArrayList<String>();
+            List<String> sWords = new ArrayList();
             int i=0;
             String []words=splitSentence(sentence);
             for(String str:words)
@@ -681,7 +680,7 @@ public class CollectionSample {
     public static void calculate_uv(List<String> u ,String sentence)
     {
         int count1=0,count2=0;
-        ArrayList<String> tempList=new ArrayList<String>();
+        ArrayList<String> tempList=new ArrayList();
         tempList.clear();
         String []words=splitSentence(sentence);
 
@@ -755,6 +754,14 @@ public class CollectionSample {
        }
        
        
+       
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code applicmation logic here
+          
+    }
 
     private static void load_summaries() {
         for(int i=0;i<Util.file_no;i++)
@@ -787,11 +794,11 @@ public class CollectionSample {
     private static int calculate_similarity(int index, int nextIndex) {
     int percent=0;
     int count1=0,count2=0;
-    ArrayList<String> summary1=new ArrayList<String>();
-    ArrayList<String> stop_word_list=new ArrayList<String>();
-    ArrayList<String> summary2=new ArrayList<String>();
-    ArrayList<String> words1=new ArrayList<String>();
-    ArrayList<String> words2=new ArrayList<String>();
+    ArrayList<String> summary1=new ArrayList<>();
+    ArrayList<String> stop_word_list=new ArrayList<>();
+    ArrayList<String> summary2=new ArrayList<>();
+    ArrayList<String> words1=new ArrayList<>();
+    ArrayList<String> words2=new ArrayList<>();
     summary1.addAll(Arrays.asList(all_files[index].split("\\.?!")));
     summary2.addAll(Arrays.asList(all_files[nextIndex].split("\\.\\?!")));
     for(String sentence1: summary1)
