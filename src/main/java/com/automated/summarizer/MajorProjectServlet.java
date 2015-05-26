@@ -2,21 +2,21 @@ package com.automated.summarizer;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.List;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.jsoup.Jsoup;
 
 @SuppressWarnings("serial")
 public class MajorProjectServlet extends HttpServlet implements Serializable
@@ -235,7 +235,7 @@ out.println("///////////////////////////////////////////////////////////////////
       out.println("<br>");
       out.println("---------------------------------------------------------------------");
       ///*out.println("<br>");
-      out.println(Util.combinedSummary);
+      //out.println(Util.combinedSummary);
       //
       out.println("<br>");
     
